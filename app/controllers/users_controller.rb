@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   def create
     input_username = params.fetch("input_username")
     
-
     a_new_user = User.new
 
     a_new_user.username = input_username
@@ -31,9 +30,11 @@ class UsersController < ApplicationController
   end
   def update
     input_username = params.fetch("input_username")
+
     user_id = params.fetch("user_id")
 
     matching_users = User.where({ :id => user_id })
+
     the_user = matching_users.at(0)
     
     the_user.username = input_username

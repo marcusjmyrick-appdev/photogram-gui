@@ -17,7 +17,7 @@
     <dt>Edit user</dt>
 
     <dd>
-      <form action="/update_user/122">
+      <form action="/update_user/<%= @the_user.id %>">
       <label for="browser_username">Username</label>
       <input id="browser_username" type="text" name="input_username" placeholder="Enter a username..." value="<%= @the_user.username %>">
 
@@ -38,7 +38,7 @@
     </tr>
     <% @the_user.own_photos.each do |a_photo| %>
     <tr>
-      <td><%= a_photo.image %></td>
+      <td><img src="<%= a_photo.image %>"></td>
       <td><%= a_photo.poster.username %></td>
       <td><%= a_photo.caption %></td>
       <td><%= a_photo.created_at %></td>
